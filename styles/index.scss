@@ -1,0 +1,107 @@
+@import "./common/var.scss";
+@import "./mixins/mixins.scss";
+
+@mixin baseStyle() {
+  color: $--color-text-regular;
+  font-size: $--font-size-base;
+  display: inline-block;
+}
+
+@mixin inputCommon($block) {
+  @include b($block) {
+    width: 100%;
+    line-height: $--input-height;
+    @include baseStyle();
+    @include m(medium) {
+      font-size: $--input-medium-font-size;
+      line-height: $--input-medium-height;
+    }
+    @include m(small) {
+      font-size: $--input-small-font-size;
+      line-height: $--input-small-height;
+    }
+    @include m(mini) {
+      font-size: $--input-mini-font-size;
+      line-height: $--input-mini-height;
+    }
+  }
+}
+
+@include b(separator) {
+  display: inline-block;
+  height: 100%;
+  line-height: 100%;
+  padding: 0 10px;
+  margin: 0;
+  text-align: center;
+  color: $--color-text-primary;
+}
+
+@include inputCommon(input);
+@include inputCommon(input-number);
+@include inputCommon(autocomplete);
+@include inputCommon(select);
+@include inputCommon(date-picker);
+@include inputCommon(time-picker);
+@include inputCommon(time-select);
+
+@include b(switch) {
+  display: inline-flex;
+  font-size: $--switch-font-size;
+  line-height: $--switch-height;
+  height: $--switch-height;
+}
+
+@include b(slider) {
+  display: block;
+  font-size: $--font-size-base;
+  line-height: $--slider-height + $--slider-margin-vertical * 2;
+}
+
+@include b(checkbox) {
+  @include baseStyle();
+}
+@include b(checkbox-button) {
+  @include baseStyle();
+}
+@include b(checkbox-group) {
+  @include baseStyle();
+  line-height: 1;
+  padding: $--button-padding-vertical 0;
+  @include m(medium) {
+    font-size: $--button-medium-font-size;
+    padding: $--button-medium-padding-vertical 0;
+  }
+  @include m(small) {
+    font-size: $--button-small-font-size;
+    padding: $--button-small-padding-vertical 0;
+  }
+  @include m(mini) {
+    font-size: $--button-mini-font-size;
+    padding: $--button-mini-padding-vertical 0;
+  }
+}
+
+@include b(radio) {
+  @include baseStyle();
+}
+@include b(radio-button) {
+  @include baseStyle();
+}
+@include b(radio-group) {
+  @include baseStyle();
+  line-height: 1;
+  padding: $--button-padding-vertical 0;
+  @include m(medium) {
+    font-size: $--button-medium-font-size;
+    padding: $--button-medium-padding-vertical 0;
+  }
+  @include m(small) {
+    font-size: $--button-small-font-size;
+    padding: $--button-small-padding-vertical 0;
+  }
+  @include m(mini) {
+    font-size: $--button-mini-font-size;
+    padding: $--button-mini-padding-vertical 0;
+  }
+}
