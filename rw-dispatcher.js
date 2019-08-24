@@ -1,4 +1,4 @@
-import * as tslib from "tslib"
+import * as tslib from 'tslib'
 import Vue from 'vue'
 import OPTIONS from './options'
 const camelCase = require('camel-case')
@@ -14,7 +14,7 @@ export function RWDispacherProvide(key) {
       Ctor.__decorators__ = []
     }
     Ctor.__decorators__.push(options => {
-      let provide = options.provide;
+      let provide = options.provide
       if (typeof provide !== 'function' || !provide.managed) {
         const original = options.provide
         provide = options.provide = function () {
@@ -22,8 +22,7 @@ export function RWDispacherProvide(key) {
           for (let i in provide.managed) {
             if (i === '__rwDispacherProvider__') {
               rv[provide.managed[i]] = this
-            }
-            else {
+            } else {
               rv[provide.managed[i]] = this[i]
             }
           }
@@ -59,4 +58,4 @@ export class RWDispatcher extends Vue {
 
 tslib.__decorate([
   RWDispacherProvide(`${camelCase(namespace)}Provider`)
-], RWDispatcher.prototype, "__rwDispacherProvider__", void 0)
+], RWDispatcher.prototype, '__rwDispacherProvider__', void 0)

@@ -20,5 +20,9 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-loader": "^15.7.1",
     "webpack": "^4.39.2"
+  },
+  "peerDependencies": {
+    "element-ui": "^2.11.1",
+    "vue": "^2.6.10"
   }
 }
