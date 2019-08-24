@@ -1,5 +1,5 @@
 import { DispatcherComponent } from './component'
 
-export declare class InputDispatcher extends DispatcherComponent {
+export declare class InputNumberDispatcher extends DispatcherComponent {
   [index: string]: any
 }

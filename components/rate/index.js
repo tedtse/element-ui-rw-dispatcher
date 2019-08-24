@@ -1,7 +1,7 @@
-import ElRateDispatcher from './src/rate.vue'
+import RateDispatcher from './src/rate.vue'
 
-ElRateDispatcher.install = function (Vue) {
-  Vue.component(ElRateDispatcher.name, ElRateDispatcher)
+RateDispatcher.install = function (Vue) {
+  Vue.component(RateDispatcher.name, RateDispatcher)
 }
 
-export default ElRateDispatcher
+export default RateDispatcher

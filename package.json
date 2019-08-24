@@ -1,8 +1,9 @@
 {
   "name": "element-ui-rw-dispatcher",
   "version": "0.0.0-alpha.6",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
+  "module": "index.js",
   "typings": "types/index.d.ts",
   "sideEffects": false,
   "scripts": {
@@ -10,8 +11,7 @@
   },
   "dependencies": {
     "change-case": "^3.1.0",
-    "lodash": "^4.17.11",
-    "rw-dispatcher-helper": "^0.0.0-alpah.4"
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.5.5",

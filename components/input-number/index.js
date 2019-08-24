@@ -1,7 +1,7 @@
-import ElInputNumberDispatcher from './src/input-number'
+import InputNumberDispatcher from './src/input-number'
 
-ElInputNumberDispatcher.install = function (Vue) {
-  Vue.component(ElInputNumberDispatcher.name, ElInputNumberDispatcher)
+InputNumberDispatcher.install = function (Vue) {
+  Vue.component(InputNumberDispatcher.name, InputNumberDispatcher)
 }
 
-export default ElInputNumberDispatcher
+export default InputNumberDispatcher

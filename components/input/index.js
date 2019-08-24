@@ -1,7 +1,7 @@
-import ElInputDispatcher from './src/input'
+import InputDispatcher from './src/input'
 
-ElInputDispatcher.install = function (Vue) {
-  Vue.component(ElInputDispatcher.name, ElInputDispatcher)
+InputDispatcher.install = function (Vue) {
+  Vue.component(InputDispatcher.name, InputDispatcher)
 }
 
-export default ElInputDispatcher
+export default InputDispatcher

@@ -1,7 +1,7 @@
-import ElSliderDispatcher from './src/slider.vue'
+import SliderDispatcher from './src/slider.vue'
 
-ElSliderDispatcher.install = function(Vue) {
-  Vue.component(ElSliderDispatcher.name, ElSliderDispatcher)
+SliderDispatcher.install = function(Vue) {
+  Vue.component(SliderDispatcher.name, SliderDispatcher)
 }
 
-export default ElSliderDispatcher
+export default SliderDispatcher

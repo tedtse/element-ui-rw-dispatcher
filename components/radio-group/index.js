@@ -1,7 +1,7 @@
-import ElRadioGroupDispatcher from './src/radio-group'
+import RadioGroupDispatcher from './src/radio-group'
 
-ElRadioGroupDispatcher.install = function (Vue) {
-  Vue.component(ElRadioGroupDispatcher.name, ElRadioGroupDispatcher)
+RadioGroupDispatcher.install = function (Vue) {
+  Vue.component(RadioGroupDispatcher.name, RadioGroupDispatcher)
 }
 
-export default ElRadioGroupDispatcher
+export default RadioGroupDispatcher

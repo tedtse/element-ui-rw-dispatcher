@@ -15,6 +15,7 @@ import ElRadioButtonDispatcher from './components/radio-button'
 import ElRateDispatcher from './components/rate'
 import ElSliderDispatcher from './components/slider'
 
+import { RWDispatcher as ElRWDispatcher } from './rw-dispatcher'
 import packageJSON from './package.json'
 
 export const SelectDispatcher = ElSelectDispatcher
@@ -33,6 +34,7 @@ export const RadioGroupDispatcher = ElRadioGroupDispatcher
 export const RadioButtonDispatcher = ElRadioButtonDispatcher
 export const RateDispatcher = ElRateDispatcher
 export const SliderDispatcher = ElSliderDispatcher
+export const RWDispatcher = ElRWDispatcher
 
 const components = [
   SelectDispatcher,

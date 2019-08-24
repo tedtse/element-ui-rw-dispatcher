@@ -1,7 +1,7 @@
-import ElTimeSelectDispatcher from '../date-picker/src/time-select.vue'
+import TimeSelectDispatcher from '../date-picker/src/time-select.vue'
 
-ElTimeSelectDispatcher.install = function (Vue) {
-  Vue.component(ElTimeSelectDispatcher.name, ElTimeSelectDispatcher)
+TimeSelectDispatcher.install = function (Vue) {
+  Vue.component(TimeSelectDispatcher.name, TimeSelectDispatcher)
 }
 
-export default ElTimeSelectDispatcher
+export default TimeSelectDispatcher

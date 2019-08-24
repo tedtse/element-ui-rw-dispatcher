@@ -1,7 +1,7 @@
-import ElCheckboxGroupDispatcher from './src/checkbox-group'
+import CheckboxGroupDispatcher from './src/checkbox-group'
 
-ElCheckboxGroupDispatcher.install = function (Vue) {
-  Vue.component(ElCheckboxGroupDispatcher.name, ElCheckboxGroupDispatcher)
+CheckboxGroupDispatcher.install = function (Vue) {
+  Vue.component(CheckboxGroupDispatcher.name, CheckboxGroupDispatcher)
 }
 
-export default ElCheckboxGroupDispatcher
+export default CheckboxGroupDispatcher

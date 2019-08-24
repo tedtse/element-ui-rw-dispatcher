@@ -1,7 +1,7 @@
-import ElSelectDispatcher from './src/select'
+import SelectDispatcher from './src/select'
 
-ElSelectDispatcher.install = function (Vue) {
-  Vue.component(ElSelectDispatcher.name, ElSelectDispatcher)
+SelectDispatcher.install = function (Vue) {
+  Vue.component(SelectDispatcher.name, SelectDispatcher)
 }
 
-export default ElSelectDispatcher
+export default SelectDispatcher

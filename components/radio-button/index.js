@@ -1,7 +1,7 @@
-import ElRadioButtonDispatcher from './src/radio-button'
+import RadioButtonDispatcher from './src/radio-button'
 
-ElRadioButtonDispatcher.install = function (Vue) {
-  Vue.component(ElRadioButtonDispatcher.name, ElRadioButtonDispatcher)
+RadioButtonDispatcher.install = function (Vue) {
+  Vue.component(RadioButtonDispatcher.name, RadioButtonDispatcher)
 }
 
-export default ElRadioButtonDispatcher
+export default RadioButtonDispatcher

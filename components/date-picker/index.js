@@ -1,7 +1,7 @@
-import ElDatePickerDispatcher from './src/date-picker.vue'
+import DatePickerDispatcher from './src/date-picker.vue'
 
-ElDatePickerDispatcher.install = function (Vue) {
-  Vue.component(ElDatePickerDispatcher.name, ElDatePickerDispatcher)
+DatePickerDispatcher.install = function (Vue) {
+  Vue.component(DatePickerDispatcher.name, DatePickerDispatcher)
 }
 
-export default ElDatePickerDispatcher
+export default DatePickerDispatcher

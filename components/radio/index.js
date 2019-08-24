@@ -1,7 +1,7 @@
-import ElRadioDispatcher from './src/radio'
+import RadioDispatcher from './src/radio'
 
-ElRadioDispatcher.install = function (Vue) {
-  Vue.component(ElRadioDispatcher.name, ElRadioDispatcher)
+RadioDispatcher.install = function (Vue) {
+  Vue.component(RadioDispatcher.name, RadioDispatcher)
 }
 
-export default ElRadioDispatcher
+export default RadioDispatcher

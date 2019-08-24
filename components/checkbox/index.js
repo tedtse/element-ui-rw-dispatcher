@@ -1,7 +1,7 @@
-import ElCheckboxDispatcher from './src/checkbox'
+import CheckboxDispatcher from './src/checkbox'
 
-ElCheckboxDispatcher.install = function (Vue) {
-  Vue.component(ElCheckboxDispatcher.name, ElCheckboxDispatcher)
+CheckboxDispatcher.install = function (Vue) {
+  Vue.component(CheckboxDispatcher.name, CheckboxDispatcher)
 }
 
-export default ElCheckboxDispatcher
+export default CheckboxDispatcher

@@ -1,7 +1,7 @@
-import ElSwitchDispatcher from './src/switch.vue'
+import SwitchDispatcher from './src/switch.vue'
 
-ElSwitchDispatcher.install = function (Vue) {
-  Vue.component(ElSwitchDispatcher.name, ElSwitchDispatcher)
+SwitchDispatcher.install = function (Vue) {
+  Vue.component(SwitchDispatcher.name, SwitchDispatcher)
 }
 
-export default ElSwitchDispatcher
+export default SwitchDispatcher

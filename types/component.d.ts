@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
-export declare class ElDispatcherComponent extends Vue {
+export declare class DispatcherComponent extends Vue {
   static install (vue: typeof Vue): void
 }
 
-export type ElDispatcherComponentSize = 'large' | 'medium' | 'small' | 'mini'
+export type DispatcherComponentSize = 'large' | 'medium' | 'small' | 'mini'

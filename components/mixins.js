@@ -1,6 +1,6 @@
 import _ from 'lodash'
-import helper from 'rw-dispatcher-helper'
-import TickEmitter from 'rw-dispatcher-helper/tick-emitter'
+import helper, { TickEmitter } from 'rw-dispatcher-helper'
+// import TickEmitter from 'rw-dispatcher-helper/tick-emitter'
 import options from '../options'
 
 const tickEmitter = new TickEmitter()
@@ -11,8 +11,8 @@ export const renderHook = (parent, uuid, tag) => {
     if (!formItems.length) {
       return
     }
-    const [uuidVnode, formItem] = helper.findComponentByUuid(formItems, options.uuidAttribute, uuid)
-    if (!formItem) {
+    const { uuidVnode, formItem } = helper.findComponentByUuid(formItems, options.uuidAttribute, uuid)
+    if (!uuidVnode || !formItem) {
       return
     }
     const selfSize = _.get(uuidVnode, 'data.attrs.size')

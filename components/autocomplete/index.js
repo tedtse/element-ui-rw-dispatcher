@@ -1,7 +1,7 @@
-import ElAutocompleteDispatcher from './src/autocomplete.vue'
+import AutocompleteDispatcher from './src/autocomplete.vue'
 
-ElAutocompleteDispatcher.install = function (Vue) {
-  Vue.component(ElAutocompleteDispatcher.name, ElAutocompleteDispatcher)
+AutocompleteDispatcher.install = function (Vue) {
+  Vue.component(AutocompleteDispatcher.name, AutocompleteDispatcher)
 }
 
-export default ElAutocompleteDispatcher
+export default AutocompleteDispatcher
