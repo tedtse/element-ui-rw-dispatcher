@@ -13,7 +13,7 @@ const renderRules = [
     action: (h, context) => {
       const tag = 'checkbox'
       const { label, value } = _.get(context, 'data.attrs', {})
-      const { readStateData, uuid } = helper.wrapContext(context, options.uuidAttribute, options.readStateClsPrefix, tag)
+      const { readStateData, uuid } = helper.wrapContext(context, options.uuidAttribute, options.readStateClsPrefix, tag, '--')
       const data = _.merge({}, readStateData, { attrs: { label } })
       let vnode
       if (value) {
@@ -21,7 +21,7 @@ const renderRules = [
       } else {
         vnode = hiddenComponent(h, context, data)
       }
-      renderHook(context.parent, uuid, tag)
+      renderHook(context.parent, uuid, tag, _.get(context, 'data.attrs.size'))
       return vnode
     }
   }
@@ -31,8 +31,9 @@ export default {
   name: 'ElCheckboxDispatcher',
   functional: true,
   inject: [options.providerName],
-  render(h, context) {
-    const state = _.get(context, `injections.${options.providerName}.${options.providerState}`, '')
+  render (h, context) {
+    const state = helper.getDispatcherProp(context, options.namespace, 'state') ||
+      _.get(context, `injections.${options.providerName}.${options.providerState}`, '')
     const rule = renderRules.find(rule => rule.match(context, state, options))
     if (rule) {
       return rule.action(h, context, options)

@@ -16,6 +16,7 @@ import ElRateDispatcher from './components/rate'
 import ElSliderDispatcher from './components/slider'
 
 import { RWDispatcher as ElRWDispatcher } from './rw-dispatcher'
+import OPTIONS, { setOptions } from './options'
 import packageJSON from './package.json'
 
 export const SelectDispatcher = ElSelectDispatcher
@@ -56,7 +57,9 @@ const components = [
 ]
 
 const install = function (Vue, opts = {}) {
+  setOptions(opts)
   components.forEach(comp => {
+    comp.reset(OPTIONS)
     Vue.component(comp.name, comp)
   })
 }

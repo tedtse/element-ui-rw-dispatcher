@@ -20,8 +20,9 @@ export default {
   name: 'ElTimePickerDispatcher',
   functional: true,
   inject: [options.providerName],
-  render(h, context) {
-    const state = _.get(context, `injections.${options.providerName}.${options.providerState}`, '')
+  render (h, context) {
+    const state = helper.getDispatcherProp(context, options.namespace, 'state') ||
+      _.get(context, `injections.${options.providerName}.${options.providerState}`, '')
     const rule = renderRules.find(rule => rule.match(context, state, options))
     if (rule) {
       return rule.action(h, context, options)

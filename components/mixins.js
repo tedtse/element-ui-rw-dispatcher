@@ -1,27 +1,23 @@
 import _ from 'lodash'
 import helper, { TickEmitter } from 'rw-dispatcher-helper'
-// import TickEmitter from 'rw-dispatcher-helper/tick-emitter'
 import options from '../options'
 
 const tickEmitter = new TickEmitter()
 
-export const renderHook = (parent, uuid, tag) => {
+export const renderHook = (parent, uuid, tag, selfSize) => {
   tickEmitter.once(uuid, () => {
-    const formItems = helper.findFormItems(parent)
+    const tagName = 'ElFormItem'
+    const formItems = helper.findFormItems(parent, tagName)
     if (!formItems.length) {
       return
     }
-    const { uuidVnode, formItem } = helper.findComponentByUuid(formItems, options.uuidAttribute, uuid)
+    const { uuidVnode, formItem } = helper.findComponentByUUID(formItems, options.uuidAttribute, uuid, tagName)
     if (!uuidVnode || !formItem) {
-      return
-    }
-    const selfSize = _.get(uuidVnode, 'data.attrs.size')
-    if (selfSize) {
       return
     }
     const formItemSize = _.get(formItem, 'size')
     const formSize = _.get(formItem, 'form.size')
-    const size = formItemSize || formSize
+    const size = selfSize || formItemSize || formSize
     if (size) {
       uuidVnode.elm.classList.add(`${options.readStateClsPrefix}-${tag}--${size}`)
     }

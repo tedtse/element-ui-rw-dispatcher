@@ -5,9 +5,7 @@ export default (h, context, readStateData = {}) => {
   const { children } = context
   return h('div', _.merge({}, readStateData, {
     style: {
-      display: 'none',
-      width: 0,
-      height: 0
+      display: 'none'
     },
     attrs: {
       role: options.hiddenComponentRole

@@ -12,16 +12,17 @@ const renderRules = [
     // 读状态且不存在 readStateRender 插槽
     match: (context, state) => (helper.isReadStateAndNotRener(context, state)),
     action: (h, context) => {
-      const { readStateData, uuid } = helper.wrapContext(context, options.uuidAttribute, options.readStateClsPrefix, tag)
+      const localConfig = _.get(context, `injections.${options.providerName}.${options.providerConfig}`, {})
+      const { readStateData, uuid } = helper.wrapContext(context, options.uuidAttribute, options.readStateClsPrefix, tag, '--')
       const formatTooltip = _.get(context, 'props.formatTooltip', null)
-      const separator = helper.getDispatcherProp(context, options.namespace, 'range-separator') || options.rangeSeparator
+      const separator = helper.getDispatcherProp(context, options.namespace, 'range-separator') || localConfig.rangeSeparator || options.rangeSeparator
       const value = _.get(context, 'data.attrs.value', '')
       const tmp = value.constructor === Array ? value : [value]
       const labels = tmp.map(item => (
         typeof formatTooltip === 'function' ? formatTooltip(item) : item
       ))
       const vnode = h('div', readStateData, joinWithSeperator(h, labels, separator))
-      renderHook(context.parent, uuid, tag)
+      renderHook(context.parent, uuid, tag, _.get(context, 'data.attrs.size'))
       return vnode
     }
   }
@@ -32,7 +33,8 @@ export default {
   functional: true,
   inject: [options.providerName],
   render (h, context) {
-    const state = _.get(context, `injections.${options.providerName}.${options.providerState}`, '')
+    const state = helper.getDispatcherProp(context, options.namespace, 'state') ||
+      _.get(context, `injections.${options.providerName}.${options.providerState}`, '')
     const rule = renderRules.find(rule => rule.match(context, state, options))
     if (rule) {
       return rule.action(h, context, options)

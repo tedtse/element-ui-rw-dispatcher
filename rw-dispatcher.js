@@ -5,7 +5,7 @@ const camelCase = require('camel-case')
 
 const namespace = OPTIONS.namespace
 
-export function RWDispacherProvide(key) {
+export function RWDispacherProvide (key) {
   return (target, propertyKey, descriptor) => {
     const Ctor = typeof target === 'function'
       ? target
@@ -36,22 +36,22 @@ export function RWDispacherProvide(key) {
 }
 
 export class RWDispatcher extends Vue {
-  constructor() {
+  constructor () {
     super()
     this.__rwDispacherProvider__ = this
     this[`${camelCase(namespace)}State`] = 'write'
     this[`${camelCase(namespace)}Config`] = {}
   }
-  setRWDispatcherState(state) {
+  setRWDispatcherState (state) {
     this[`${camelCase(namespace)}State`] = state
   }
-  getRWDispatcherState() {
+  getRWDispatcherState () {
     return this[`${camelCase(namespace)}State`]
   }
-  setRWDispatcherConfig(config) {
+  setRWDispatcherConfig (config) {
     this[`${camelCase(namespace)}Config`] = config
   }
-  getRWDispatcherConfig() {
+  getRWDispatcherConfig () {
     return this[`${camelCase(namespace)}Config`]
   }
 }

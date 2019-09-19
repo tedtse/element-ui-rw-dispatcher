@@ -23,7 +23,7 @@ const renderRules = [
     match: (context, state) => (helper.isReadStateAndNotRener(context, state)),
     action: (h, context) => {
       const tag = 'radio-group'
-      const { readStateData, uuid } = helper.wrapContext(context, options.uuidAttribute, options.readStateClsPrefix, tag)
+      const { readStateData, uuid } = helper.wrapContext(context, options.uuidAttribute, options.readStateClsPrefix, tag, '--')
       const value = _.get(context, 'data.attrs.value')
       const childNodes = []
       const children = _.get(context, 'children', [])
@@ -39,7 +39,7 @@ const renderRules = [
         }
       })
       const vnode = h('div', readStateData, childNodes)
-      renderHook(context.parent, uuid, tag)
+      renderHook(context.parent, uuid, tag, _.get(context, 'data.attrs.size'))
       return vnode
     }
   }
@@ -49,8 +49,9 @@ export default {
   name: 'ElRadioGroupDispatcher',
   functional: true,
   inject: [options.providerName],
-  render(h, context) {
-    const state = _.get(context, `injections.${options.providerName}.${options.providerState}`, '')
+  render (h, context) {
+    const state = helper.getDispatcherProp(context, options.namespace, 'state') ||
+      _.get(context, `injections.${options.providerName}.${options.providerState}`, '')
     const rule = renderRules.find(rule => rule.match(context, state, options))
     if (rule) {
       return rule.action(h, context, options)

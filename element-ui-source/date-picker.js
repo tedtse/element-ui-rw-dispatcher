@@ -29,17 +29,17 @@ export const HAVE_TRIGGER_TYPES = [
   'dates'
 ]
 
-export const DATE_FORMATTER = function(value, format) {
+export const DATE_FORMATTER = function (value, format) {
   if (format === 'timestamp') return value.getTime()
   return formatDate(value, format)
 }
 
-export const DATE_PARSER = function(text, format) {
+export const DATE_PARSER = function (text, format) {
   if (format === 'timestamp') return new Date(Number(text))
   return parseDate(text, format)
 }
 
-export const RANGE_FORMATTER = function(value, format) {
+export const RANGE_FORMATTER = function (value, format) {
   if (Array.isArray(value) && value.length === 2) {
     const start = value[0]
     const end = value[1]
@@ -50,7 +50,7 @@ export const RANGE_FORMATTER = function(value, format) {
   return ''
 }
 
-export const RANGE_PARSER = function(array, format, separator) {
+export const RANGE_PARSER = function (array, format, separator) {
   if (!Array.isArray(array)) {
     array = array.split(separator)
   }
@@ -64,17 +64,17 @@ export const RANGE_PARSER = function(array, format, separator) {
 
 export const TYPE_VALUE_RESOLVER_MAP = {
   default: {
-    formatter(value) {
+    formatter (value) {
       if (!value) return ''
       return '' + value
     },
-    parser(text) {
+    parser (text) {
       if (text === undefined || text === '') return null
       return text
     }
   },
   week: {
-    formatter(value, format) {
+    formatter (value, format) {
       let week = getWeekNumber(value)
       let month = value.getMonth()
       const trueDate = new Date(value)
@@ -88,7 +88,7 @@ export const TYPE_VALUE_RESOLVER_MAP = {
         : date.replace(/W/, week)
       return date
     },
-    parser(text, format) {
+    parser (text, format) {
       // parse as if a normal date
       return TYPE_VALUE_RESOLVER_MAP.date.parser(text, format)
     }
@@ -130,11 +130,11 @@ export const TYPE_VALUE_RESOLVER_MAP = {
     parser: DATE_PARSER
   },
   number: {
-    formatter(value) {
+    formatter (value) {
       if (!value) return ''
       return '' + value
     },
-    parser(text) {
+    parser (text) {
       let result = Number(text)
       if (!isNaN(text)) {
         return result
@@ -144,10 +144,10 @@ export const TYPE_VALUE_RESOLVER_MAP = {
     }
   },
   dates: {
-    formatter(value, format) {
+    formatter (value, format) {
       return value.map(date => DATE_FORMATTER(date, format))
     },
-    parser(value, format) {
+    parser (value, format) {
       return (typeof value === 'string' ? value.split(', ') : value).map(date =>
         date instanceof Date ? date : DATE_PARSER(date, format)
       )
