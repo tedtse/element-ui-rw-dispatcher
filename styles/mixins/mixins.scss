@@ -2,8 +2,8 @@
 
 /* BEM
  -------------------------- */
- @mixin b($block) {
-  $B: $namespace+'-'+$block !global;
+ @mixin b($block, $ns: $namespace) {
+  $B: $ns+'-'+$block !global;
 
   .#{$B} {
     @content;
