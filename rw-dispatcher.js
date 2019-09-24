@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __extends } from "tslib";
 import Vue from 'vue';
 import OPTIONS from './options';
 var camelCase = require('camel-case');
@@ -34,7 +34,7 @@ export function RWDispacherProvide(key) {
     };
 }
 var RWDispatcher = /** @class */ (function (_super) {
-    tslib_1.__extends(RWDispatcher, _super);
+    __extends(RWDispatcher, _super);
     function RWDispatcher() {
         var _this = _super.call(this) || this;
         _this.__rwDispacherProvider__ = _this;
@@ -54,7 +54,7 @@ var RWDispatcher = /** @class */ (function (_super) {
     RWDispatcher.prototype.getRWDispatcherConfig = function () {
         return this[camelCase(namespace) + "Config"];
     };
-    tslib_1.__decorate([
+    __decorate([
         RWDispacherProvide(camelCase(namespace) + "Provider")
     ], RWDispatcher.prototype, "__rwDispacherProvider__", void 0);
     return RWDispatcher;

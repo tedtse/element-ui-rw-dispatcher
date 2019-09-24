@@ -1,10 +1,12 @@
 {
   "name": "element-ui-rw-dispatcher",
-  "version": "0.0.0-alpha",
+  "version": "0.0.0-alpha.2",
   "license": "MIT",
   "main": "index.js",
-  "module": "index.js",
   "typings": "types/index.d.ts",
+  "scripts": {
+    "genCode": "tsc -p tsconfig.json"
+  },
   "dependencies": {
     "change-case": "^3.1.0",
     "lodash": "^4.17.15",
