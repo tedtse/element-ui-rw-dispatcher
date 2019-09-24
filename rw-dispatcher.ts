@@ -25,7 +25,7 @@ export function RWDispacherProvide (key?: string | symbol) {
         const original = options.provide
         provide = options.provide = function (this: any) {
           let rv = Object.create(
-            (typeof original === 'function' ? original.call(this) : original) || null
+            (typeof original === 'function' ? (original as Function & ((this: unknown) => object)).call(this) : original) || null
           )
           for (let i in provide.managed) {
             if (i === '__rwDispacherProvider__') {

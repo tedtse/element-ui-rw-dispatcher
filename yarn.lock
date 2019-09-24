@@ -2,6 +2,23 @@
 # yarn lockfile v1
 
 
+"@types/lodash@^4.14.137":
+  version "4.14.138"
+  resolved "http://npm.xiepeng.cc/@types%2flodash/-/lodash-4.14.138.tgz#34f52640d7358230308344e579c15b378d91989e"
+  integrity sha1-NPUmQNc1gjAwg0TlecFbN42RmJ4=
+
+"@types/node@*":
+  version "12.7.5"
+  resolved "http://npm.xiepeng.cc/@types%2fnode/-/node-12.7.5.tgz#e19436e7f8e9b4601005d73673b6dc4784ffcc2f"
+  integrity sha1-4ZQ25/jptGAQBdc2c7bcR4T/zC8=
+
+"@types/uuid@^3.4.5":
+  version "3.4.5"
+  resolved "http://npm.xiepeng.cc/@types%2fuuid/-/uuid-3.4.5.tgz#d4dc10785b497a1474eae0ba7f0cb09c0ddfd6eb"
+  integrity sha1-1NwQeFtJehR06uC6fwywnA3f1us=
+  dependencies:
+    "@types/node" "*"
+
 camel-case@^3.0.0:
   version "3.0.0"
   resolved "http://npm.xiepeng.cc/camel-case/-/camel-case-3.0.0.tgz#ca3c3688a4e9cf3a4cda777dc4dcbc713249cf73"
@@ -117,6 +134,17 @@ path-case@^2.1.0:
   dependencies:
     no-case "^2.2.0"
 
+rw-dispatcher-helper@^0.0.0-alpha:
+  version "0.0.0-alpha"
+  resolved "http://npm.xiepeng.cc/rw-dispatcher-helper/-/rw-dispatcher-helper-0.0.0-alpha.tgz#82afcd6c1c4b56f93ab5a1e99587c4033e09d0f5"
+  integrity sha512-a+ewl3gTNdOKZlpFtVqnqZcz/T73DuKEJkKKNLLiTOiKJaGWWDCBJ8d3PmGDWbfvOKRzqMPWjSnv48EU7+EBLw==
+  dependencies:
+    "@types/lodash" "^4.14.137"
+    "@types/uuid" "^3.4.5"
+    change-case "^3.1.0"
+    lodash "^4.17.15"
+    uuid "^3.3.2"
+
 sentence-case@^2.1.0:
   version "2.1.1"
   resolved "http://npm.xiepeng.cc/sentence-case/-/sentence-case-2.1.1.tgz#1f6e2dda39c168bf92d13f86d4a918933f667ed4"
@@ -159,3 +187,8 @@ upper-case@^1.0.3, upper-case@^1.1.0, upper-case@^1.1.1, upper-case@^1.1.3:
   version "1.1.3"
   resolved "http://npm.xiepeng.cc/upper-case/-/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
   integrity sha1-9rRQHC7EzdJrp4vnIilh3ndiFZg=
+
+uuid@^3.3.2:
+  version "3.3.3"
+  resolved "http://npm.xiepeng.cc/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
+  integrity sha1-RWjwIW54dg7h2/Ok0s9T4iQRKGY=
