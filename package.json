@@ -1,6 +1,6 @@
 {
   "name": "element-ui-rw-dispatcher",
-  "version": "0.1.0-beta",
+  "version": "0.1.0-beta.1",
   "license": "MIT",
   "main": "index.js",
   "typings": "types/index.d.ts",
@@ -10,7 +10,7 @@
   "dependencies": {
     "change-case": "^3.1.0",
     "lodash": "^4.17.15",
-    "rw-dispatcher-helper": "^0.0.0-alpha"
+    "rw-dispatcher-helper": "^0.1.0-beta"
   },
   "peerDependencies": {
     "element-ui": "^2.11.1",
