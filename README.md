@@ -38,6 +38,7 @@ new Vue({
 - data属性中添加 rwDispatcherState 做状态管理（read or write）
 
 - 原来表单元素的标签加一个 -dispatcher 后缀，其配置保持不变
+
 ```html
 <template>
   <el-form ref="form" :model="form" label-width="80px" size="small">
@@ -66,6 +67,7 @@ new Vue({
     </div>
   </el-form>
 </template>
+
 <script>
 export default {
   provide () {
@@ -215,14 +217,15 @@ Vue.use(ElementUiRwDispatcher, {
     </el-form-item>
   </el-form>
 </template>
+
 <script>
 export default {
-  provide() {
+  provide () {
     return {
       rwDispatcherProvider: this
     }
   },
-  data() {
+  data () {
     return {
       rwDispatcherState: 'write',
       rwDispatcherConfig: {
@@ -261,7 +264,8 @@ read 状态的渲染函数有多套配置，分别是：
 
 - **全局配置**
 
-  插件初始化时配置。比如命名空间 `namespace`（默认 `rwDispatcher`），用法是：
+插件初始化时配置。比如命名空间 `namespace`（默认 `rwDispatcher`），用法是：
+
 ```js
 import Vue from 'vue'
 import ElementUiRwDispatcher from 'element-ui-rw-dispatcher'
@@ -273,7 +277,8 @@ Vue.use(ElementUiRwDispatcher, {
 
 - **局部配置**
 
-  在 provider 组件中的 `${namespace}Config` 参数（默认 `rwDispatcherConfig`），用法是：
+在 provider 组件中的 `${namespace}Config` 参数（默认 `rwDispatcherConfig`），用法是：
+
 ```js
 export default {
   data () {
@@ -288,7 +293,8 @@ export default {
 
 - **组件配置**
 
-  单个组件的 props 和 slot。比如：
+单个组件的 props 和 slot。比如：
+
 ```html
 <el-date-picker-dispatcher type="daterange" rw-dispatcher-range-separator="-">
   <template #rwDispatcherRender="{ data, children }">
