@@ -31,7 +31,7 @@ const traverse = (vnodes = [], values) => {
 
 const getLabels = (data, children) => {
   const [value, allowCreate] = [data.attrs.value, data.attrs.hasOwnProperty('allow-create')]
-  const values = value.constructor === Array ? value : [value]
+  const values = value instanceof Array ? value : [value]
   const matcher = traverse(children, values)
   const matcherValueMap = matcher.map(item => item.value)
   const rest = allowCreate

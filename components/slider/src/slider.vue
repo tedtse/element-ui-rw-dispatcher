@@ -17,7 +17,7 @@ const renderRules = [
       const formatTooltip = _.get(context, 'props.formatTooltip', null)
       const separator = helper.getDispatcherProp(context, options.namespace, 'range-separator') || localConfig.rangeSeparator || options.rangeSeparator
       const value = _.get(context, 'data.attrs.value', '')
-      const tmp = value.constructor === Array ? value : [value]
+      const tmp = value instanceof Array ? value : [value]
       const labels = tmp.map(item => (
         typeof formatTooltip === 'function' ? formatTooltip(item) : item
       ))

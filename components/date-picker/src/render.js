@@ -16,7 +16,7 @@ export default (h, context, type) => {
     options.rangeSeparator
   const disValue = getDisplayValue(context, type)
   let childNodes = []
-  if (disValue.constructor === Array) {
+  if (disValue instanceof Array) {
     childNodes = disValue
   } else {
     childNodes = [disValue]

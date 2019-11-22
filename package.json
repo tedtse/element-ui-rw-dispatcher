@@ -1,6 +1,6 @@
 {
   "name": "element-ui-rw-dispatcher",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "index.js",
   "typings": "types/index.d.ts",
